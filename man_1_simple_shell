@@ -1,0 +1,67 @@
+.TH simple_shell 1 "April 2024" "Simple Shell Manual"
+.SH NAME
+.B simple_shell
+Creation of a simple UNIX command interpreter.
+
+.SH DESCRIPTION
+The 
+.B simple_shell
+utility is a command interpreter for UNIX systems, providing a simple and intuitive interface for executing commands and scripts. It can operate in both interactive and non-interactive modes, allowing flexibility in command execution. The program uses various libraries, including 
+.BR <stdio.h>, 
+.BR <stdlib.h>, 
+.BR <string.h>, 
+.BR <unistd.h>, 
+.BR <sys/wait.h>, 
+.BR <sys/types.h>, 
+and 
+.BR <sys/stat.h>. 
+
+.SH SYNOPSIS
+.B simple_shell
+[\fIcommand\fR]
+
+.SH USAGE
+After compilation, launch the shell in interactive mode by typing 
+.B ./hsh
+in the terminal. If a command is provided as an argument, it will be executed; otherwise, the shell will start in interactive mode with a prompt. 
+
+.SH MODES
+The 
+.B simple_shell
+can be used in two different modes:
+.TP
+Interactive mode: Starts the shell with a prompt where users can enter commands.
+.TP
+Non-interactive mode: Commands can be piped to the shell via standard input. For example:
+.PP
+.B echo "/bin/ls" | ./hsh
+
+.SH RETURN VALUE
+The 
+.B simple_shell
+program returns an integer value upon completion. A return value of 0 indicates successful execution of the program, while a non-zero value indicates an error or abnormal termination.
+
+.SH EXIT
+The 
+.B exit
+command is used to terminate the 
+.B simple_shell
+program.
+
+.SH EXAMPLES
+The 
+.B simple_shell
+searches for commands in the shell's path if they do not begin with "/". For example:
+.PP
+.B $ ls
+.PP
+.B $ /bin/ls
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHORS
+Written by James Jarosz and Clément Defer.
+
+.SH COPYRIGHT
+.B Copyright © 2024 Holberton School Lille
